@@ -1,0 +1,73 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build active file",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-g3", // maximal debug info
+        "-O0", // no optimizations
+        "-fno-omit-frame-pointer", // better stack traces for asan
+        "-Wall",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$gcc"
+    }
+  ]
+}
+//////////////////////////////
+// {
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "build active file",
+//       "type": "shell",
+//       "command": "gcc",
+//       "args": [
+//         "-g", // debug info
+//         "-Wall", // all common warnings
+//         "-Werror", // treat warnings as errors
+//         "-fsanitize=address,undefined", // runtime checks
+//         "${file}", // the .c file
+//         "-o",
+//         "${fileDirname}/${fileBasenameNoExtension}"
+//       ],
+//       "group": {
+//         "kind": "build",
+//         "isDefault": true
+//       },
+//       "problemMatcher": "$gcc"
+//     }
+//   ]
+// }
+//////////////////////////////////
+// {
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "build active file",
+//       "type": "shell",
+//       "command": "gcc",
+//       "args": [
+//         "-g", // debug info
+//         "${file}", // the .c file
+//         "-o",
+//         "${fileDirname}/${fileBasenameNoExtension}"
+//       ],
+//       "group": {
+//         "kind": "build",
+//         "isDefault": true
+//       },
+//       "problemMatcher": "$gcc"
+//     }
+//   ]
+// }

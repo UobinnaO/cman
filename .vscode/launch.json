@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "build active file",
+            "externalConsole": false,
+            "environment": [
+                {
+                    "name": "ASAN_OPTIONS",
+                    "value": "detect_leaks=0"
+                }
+            ]
+        }
+    ]
+}
+///////////////////////////////////////
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "(gdb) Launch active file",
+//             "type": "cppdbg",
+//             "request": "launch",
+//             "program": "${fileDirname}/${fileBasenameNoExtension}",
+//             "args": [],
+//             "stopAtEntry": false,
+//             "cwd": "${fileDirname}",
+//             "MIMode": "gdb",
+//             "miDebuggerPath": "/usr/bin/gdb",
+//             "preLaunchTask": "build active file",
+//             "externalConsole": false
+//         }
+//     ]
+// }
+///////////////////////////////////////
